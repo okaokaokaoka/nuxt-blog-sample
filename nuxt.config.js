@@ -3,6 +3,9 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
   srcDir: 'app',
+  router: {
+    middleware: ['auth-cookie']
+  },
 
   /*
   ** Headers of the page
@@ -25,7 +28,11 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['element-ui/lib/theme-chalk/index.css'],
+  css: [
+    'element-ui/lib/theme-chalk/reset.css',
+    'element-ui/lib/theme-chalk/index.css',
+    '~/assets/common.css'
+  ],
 
   /*
   ** Plugins to load before mounting the App
